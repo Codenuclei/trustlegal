@@ -3,17 +3,27 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { ChevronRight, Calendar, Tag, Search } from "lucide-react";
+import { ChevronRight, Calendar, Search } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
+interface Article {
+  id: number;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  image: string;
+  featured: boolean;
+}
 
 export default function BlogPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
 
   // Sample blog articles
-  const articles = [
+  const articles: Article[] = [
     {
       id: 1,
       title: "Key Considerations for Business Incorporation in Ontario",
