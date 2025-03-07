@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Messages() {
-    const [messages, setMessages] = useState([
+    const [messages, ] = useState([
         {
             id: 1,
             sender: "Sarah Chen",

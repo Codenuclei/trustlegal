@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 import z from "zod";
-
-import Image from "next/image";
 import { signIn } from "next-auth/react";
 import { Eye, EyeOff } from "lucide-react";
 import { UserLogin } from "@/types/UserLogin";

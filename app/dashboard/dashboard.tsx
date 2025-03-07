@@ -2,47 +2,26 @@
 
 import { useState, useEffect } from "react"
 import {
-    Menu,
-    X,
-    Bell,
-    Mail,
-    Calendar,
     FileText,
-    Users,
-    Settings,
-    Home,
-    CheckSquare,
-    MessageSquare,
-    Search,
-    Plus,
-    MoreHorizontal,
 } from "lucide-react"
-import SideBar from "../../components/sidebar"
+
 import PageTemplate from "@/components/page-template"
 
 export default function Dashboard() {
-    const [sidebarOpen, setSidebarOpen] = useState(true)
     const [isVisible, setIsVisible] = useState(false)
-    const [todos, setTodos] = useState([
-        { id: 1, text: "Review Johnson contract", completed: false },
-        { id: 2, text: "Prepare for Smith deposition", completed: true },
-        { id: 3, text: "File motion for Henderson case", completed: false },
-        { id: 4, text: "Call expert witness Dr. Miller", completed: false },
-        { id: 5, text: "Update client on Westfield progress", completed: false },
-    ])
     useEffect(() => {
         setIsVisible(true)
     }, [])
 
-    const toggleTodo = (id: number) => {
-        setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)))
-    }
+    // const toggleTodo = (id: number) => {
+    //     setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)))
+    // }
 
-    const addTodo = (text: string) => {
-        if (text.trim()) {
-            setTodos([...todos, { id: Date.now(), text, completed: false }])
-        }
-    }
+    // const addTodo = (text: string) => {
+    //     if (text.trim()) {
+    //         setTodos([...todos, { id: Date.now(), text, completed: false }])
+    //     }
+    // }
 
     return (
         <PageTemplate title="Dashboard">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, Calendar, FileText, Users, Settings, ChevronLeft, ChevronRight, Inbox, Pen, Mail } from 'lucide-react';
+import { X, Home, ChevronLeft, ChevronRight, Inbox, Pen, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 const SideBar = () => {

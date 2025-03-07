@@ -101,6 +101,7 @@ export default function BlogPage() {
   useEffect(() => {
     filterArticles();
   }, [activeFilter, searchQuery]);
+  
 
   const filterArticles = () => {
     let results = [...articles];
