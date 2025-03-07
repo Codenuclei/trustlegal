@@ -1,15 +1,27 @@
 'use client';
 import PageTemplate from '@/components/page-template';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 const NewsletterPage: React.FC = () => {
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Add your form submission logic here
         setSubmitted(true);
+        fetch('/api/newsletter', {
+            method: 'POST',
+            body: JSON.stringify({ email }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(() => {
+            setTimeout(() => {
+                router.push('/');
+            }, 2000);
+        });
     };
 
     return (

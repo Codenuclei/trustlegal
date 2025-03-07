@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Calendar, ChevronRight, Pen, Star } from "lucide-react";
+import { toast } from "sonner";
 
 export default function BlogPreviewSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +11,7 @@ export default function BlogPreviewSection() {
     {
       id: 1,
       title: "Key Considerations for Business Incorporation in Ontario",
-      excerpt: "Learn about the essential legal considerations when incorporating your business in Ontario.",
+      excerpt: "Learn about the essential legal considerations when incorporating your business in Ontario, including liability protection, tax implications, and ongoing corporate obligations.",
       date: "March 1, 2025",
       category: "Business Law",
       slug: "business-incorporation-ontario",
@@ -21,28 +22,95 @@ export default function BlogPreviewSection() {
     {
       id: 2,
       title: "Recent Changes to Canadian Immigration Policies",
-      excerpt: "Stay informed about the latest updates to immigration policies that may affect your status.",
+      excerpt: "Stay informed about the latest updates to immigration policies that may affect your status, including new pathways to permanent residency and changes to processing times.",
       date: "February 20, 2025",
       category: "Immigration",
       slug: "canadian-immigration-policy-updates",
       image: "/images/blog/immigration-policies.jpg",
-      href: '/blog/business-incorporation-ontario',
+      href: '/blog/canadian-immigration-policy-updates',
       starred: true
     },
     {
       id: 3,
       title: "Understanding Commercial Real Estate Transactions",
-      excerpt: "A comprehensive guide to navigating complex commercial real estate deals in today's market.",
+      excerpt: "A comprehensive guide to navigating complex commercial real estate deals in today's market, including due diligence, financing options, and closing procedures.",
       date: "February 5, 2025",
       category: "Real Estate",
       slug: "commercial-real-estate-transactions-guide",
-      image: "/images/blog/real-estate-transactions.jpg",
-      href: '/blog/business-incorporation-ontario',
+      image: "/images/blog/commercial-real-estate.jpg",
+      href: '/blog/commercial-real-estate-transactions-guide',
+      starred: false
+    },
+    {
+      id: 4,
+      title: "Effective Litigation Strategies for Small Businesses",
+      excerpt: "Learn how small businesses can navigate litigation efficiently while minimizing costs and business disruption through strategic legal approaches.",
+      date: "January 28, 2025",
+      category: "Litigation",
+      slug: "effective-litigation-strategies",
+      image: "/images/blog/litigation-strategies.jpg",
+      href: '/blog/effective-litigation-strategies',
+      starred: false
+    },
+    {
+      id: 5,
+      title: "Navigating Employment Contracts: What Employers Need to Know",
+      excerpt: "Essential guidelines for employers when drafting and negotiating employment contracts to ensure compliance with Ontario labor laws and protect business interests.",
+      date: "January 15, 2025",
+      category: "Business Law",
+      slug: "navigating-employment-contracts",
+      image: "/images/blog/employment-contracts.jpg",
+      href: '/blog/navigating-employment-contracts',
+      starred: false
+    },
+    {
+      id: 6,
+      title: "Family Sponsorship Immigration: Process and Requirements",
+      excerpt: "A detailed overview of the family sponsorship immigration process in Canada, including eligibility requirements, documentation, and processing timelines.",
+      date: "January 3, 2025",
+      category: "Immigration",
+      slug: "family-sponsorship-immigration",
+      image: "/images/blog/family-sponsorship.jpg",
+      href: '/blog/family-sponsorship-immigration',
+      starred: false
+    },
+    {
+      id: 7,
+      title: "Resolving Boundary Disputes in Residential Properties",
+      excerpt: "Practical advice for homeowners facing boundary disputes, including legal remedies, survey considerations, and alternative resolution approaches.",
+      date: "December 18, 2024",
+      category: "Real Estate",
+      slug: "resolving-boundary-disputes",
+      image: "/images/blog/boundary-disputes.jpg",
+      href: '/blog/resolving-boundary-disputes',
+      starred: false
+    },
+    {
+      id: 8,
+      title: "Preparing for Depositions: Client Guidelines",
+      excerpt: "Expert tips on how to prepare for and conduct yourself during depositions to strengthen your litigation position and avoid common pitfalls.",
+      date: "December 5, 2024",
+      category: "Litigation",
+      slug: "preparing-for-depositions",
+      image: "/images/blog/depositions.jpg",
+      href: '/blog/preparing-for-depositions',
       starred: false
     }
   ]);
 
   useEffect(() => {
+    async function fetchData() {
+      try{
+        const res = await fetch('/api/blogs');
+        const data = await res.json();
+        setArticles(data);
+      }catch(err: any){
+        console.error(err);
+        toast.error('Failed to fetch blog articles');
+      }
+
+    }
+    fetchData();
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
