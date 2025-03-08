@@ -34,7 +34,7 @@
        date: "March 1, 2025",
        category: "Business Law",
        slug: "business-incorporation-ontario",
-       image: "/images/blog/business-incorporation.jpg"
+       image: "/business.jpg"
      },
      {
        id: 2,
@@ -43,7 +43,7 @@
        date: "February 20, 2025",
        category: "Immigration",
        slug: "canadian-immigration-policy-updates",
-       image: "/images/blog/immigration-policies.jpg"
+       image: "/Canadian-Immigration.jpg"
      },
      {
        id: 3,
@@ -52,7 +52,7 @@
        date: "February 5, 2025",
        category: "Real Estate",
        slug: "commercial-real-estate-transactions-guide",
-       image: "/images/blog/real-estate-transactions.jpg"
+       image:  "/Real-Estate.jpg"
      }
    ];
  
