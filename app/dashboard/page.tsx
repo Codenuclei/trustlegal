@@ -1,6 +1,10 @@
-import Dashboard from "./dashboard"
+import BlogPreviewSection from "@/components/blog-preview-section";
+import PageTemplate from "@/components/page-template";
 
-export default function DashboardPage() {
-  return <Dashboard />
+export default function Blog() {
+    return(
+        <PageTemplate title="Blog">
+            <BlogPreviewSection/>
+        </PageTemplate>
+    )
 }
-
