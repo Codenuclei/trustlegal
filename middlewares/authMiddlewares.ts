@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // Define the paths where authentication is required
-const protectedPaths = ['/admin', '/dashboard', '/profile','/api '];
+const protectedPaths = ['/admin', '/profile','/api '];
 
 export function authMiddleware(req: NextRequest) {
   const token = req.cookies.get('next-auth.session-token') || req.cookies.get('__Secure-next-auth.session-token');
