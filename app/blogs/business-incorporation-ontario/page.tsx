@@ -3,7 +3,9 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, User, CheckCircle } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Phototeri from "@/public/team.jpg"
+import HeroPic from "@/public/business.jpg"
+import OmungGupta from "@/public/OmungGupta.jpeg";
+
 
 export default function BusinessIncorporationOntario() {
   return (
@@ -47,7 +49,7 @@ export default function BusinessIncorporationOntario() {
         {/* Featured Image */}
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src={Phototeri}
+            src={HeroPic}
             alt="Business Incorporation in Ontario"
             fill
             className="object-cover"
@@ -266,7 +268,7 @@ export default function BusinessIncorporationOntario() {
             <div className="flex items-center gap-4 mt-8 p-6 border rounded-lg bg-[#f9f9f9]">
               <div className="relative h-16 w-16 rounded-full overflow-hidden">
                 <Image 
-                  src="/images/team/omung-gupta.jpg" 
+                  src= {OmungGupta} 
                   alt="Omung Gupta" 
                   fill 
                   className="object-cover"
@@ -294,7 +296,7 @@ export default function BusinessIncorporationOntario() {
                 Our experienced team will help establish the optimal corporate structure for your business goals.
               </p>
               <Link 
-                href="/contact" 
+                href="/contact-us" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#ba9669] text-white font-medium rounded-md hover:bg-[#ba9669]/90 transition-colors"
               >
                 Schedule a Consultation
@@ -309,44 +311,44 @@ export default function BusinessIncorporationOntario() {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-[#1e2b3e] mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-6">
-                <Link href="/blog/contract-essentials-for-businesses" className="group">
+                <Link href="/blogs/canadian-immigration-policy-updates" className="group">
                   <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <div className="relative h-48">
                       <Image 
-                        src="/images/blog/contracts.jpg" 
-                        alt="Business Contracts" 
+                        src="/Canadian-Immigration.jpg" 
+                        alt="Canadian Immigration Policies" 
                         fill 
                         className="object-cover"
                       />
                     </div>
                     <div className="p-6">
-                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Business Law</div>
-                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Essential Contracts Every Ontario Business Should Have</h3>
-                      <p className="text-sm text-gray-600 mt-2">Protect your business with properly drafted agreements that address key relationships and risks.</p>
+                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Immigration</div>
+                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Recent Changes to Canadian Immigration Policies</h3>
+                      <p className="text-sm text-gray-600 mt-2">Stay informed about the latest updates to immigration policies that may affect your status.</p>
                       <div className="flex items-center mt-4 text-xs text-gray-500">
                         <Calendar className="h-3 w-3 mr-1" />
-                        <span>February 15, 2025</span>
+                        <span>February 20, 2025</span>
                       </div>
                     </div>
                   </div>
                 </Link>
-                <Link href="/blog/tax-advantages-incorporation" className="group">
+                <Link href="/blogs/commercial-real-estate-transactions-guide" className="group">
                   <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <div className="relative h-48">
                       <Image 
-                        src="/images/blog/tax-planning.jpg" 
-                        alt="Tax Planning" 
+                        src="/Real-Estate.jpg" 
+                        alt="Commercial Real Estate" 
                         fill 
                         className="object-cover"
                       />
                     </div>
                     <div className="p-6">
-                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Taxation</div>
-                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Tax Advantages of Incorporation for Canadian Business Owners</h3>
-                      <p className="text-sm text-gray-600 mt-2">Understand how incorporating your business can lead to significant tax savings and benefits.</p>
+                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Real Estate</div>
+                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Understanding Commercial Real Estate Transactions</h3>
+                      <p className="text-sm text-gray-600 mt-2">A comprehensive guide to navigating complex commercial real estate deals in today&apos;s market.</p>
                       <div className="flex items-center mt-4 text-xs text-gray-500">
                         <Calendar className="h-3 w-3 mr-1" />
-                        <span>January 22, 2025</span>
+                        <span>February 5, 2025</span>
                       </div>
                     </div>
                   </div>

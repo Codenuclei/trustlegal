@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import Image from "next/image"
-import Penguine from "../public/penguine.jpg"
+import man1 from "@/public/men1.jpg"
+import man2 from "@/public/men2.jpg"
+import woman from "@/public/women.jpg"
 
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -44,21 +46,21 @@ export default function TestimonialsSection() {
         "TRUST LEGAL provided exceptional guidance through our company's complex regulatory compliance challenges. Their business law expertise helped us restructure our operations efficiently while minimizing legal risks.",
       author: "Sarah Johnson",
       title: "CEO, Pinnacle Innovations",
-      image: Penguine,
+      image: woman,
     },
     {
       quote:
         "When facing a high-stakes commercial litigation case, TRUST LEGAL delivered outstanding representation. Their meticulous preparation and strategic approach resulted in a favorable settlement that preserved our company's reputation.",
       author: "Michael Chen",
       title: "CFO, Meridian Enterprises",
-      image: Penguine,
+      image: man1,
     },
     {
       quote:
         "The immigration team at TRUST LEGAL navigated our multinational staffing challenges with remarkable efficiency. Their expertise in both immigration and real estate law was invaluable as we established our North American headquarters.",
       author: "Elena Rodriguez",
       title: "Director of Operations, Global Solutions Inc.",
-      image: Penguine,
+      image: man2,
     },
   ]
 
