@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { ChevronRight, Calendar, Search } from "lucide-react";
-import Link from "next/link";
+import Header from "@/components/header";
+import { Calendar, ChevronRight, Search } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 
 interface Article {
   id: number;
@@ -98,30 +98,29 @@ export default function BlogPage() {
     }
   ];
 
-  useEffect(() => {
-    filterArticles();
-  }, [activeFilter, searchQuery]);
-  
 
   const filterArticles = useCallback(() => {
     let results = [...articles];
-    
-    // Apply category filter
+
     if (activeFilter !== "all") {
       results = results.filter(article => article.category === activeFilter);
     }
-    
-    // Apply search query
+
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
-      results = results.filter(article => 
-        article.title.toLowerCase().includes(query) || 
+      results = results.filter(article =>
+        article.title.toLowerCase().includes(query) ||
         article.excerpt.toLowerCase().includes(query)
       );
     }
-    
+
     setFilteredArticles(results);
-  }, [activeFilter, searchQuery, articles]);
+  }, [articles, activeFilter, searchQuery]);
+
+  useEffect(() => {
+    filterArticles();
+  }, [filterArticles]);
+
 
   const featuredArticles = articles.filter(article => article.featured);
 
@@ -194,7 +193,7 @@ export default function BlogPage() {
           <div className="container mx-auto px-4">
             <div className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-[#1e2b3e] mb-6">All Articles</h2>
-              
+
               {/* Search and Filter */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div className="relative md:max-w-sm">
@@ -207,61 +206,56 @@ export default function BlogPage() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   <button
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      activeFilter === "all"
-                        ? "bg-[#1e2b3e] text-white"
-                        : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
-                    }`}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${activeFilter === "all"
+                      ? "bg-[#1e2b3e] text-white"
+                      : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
+                      }`}
                     onClick={() => setActiveFilter("all")}
                   >
                     All
                   </button>
                   <button
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      activeFilter === "Business Law"
-                        ? "bg-[#1e2b3e] text-white"
-                        : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
-                    }`}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${activeFilter === "Business Law"
+                      ? "bg-[#1e2b3e] text-white"
+                      : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
+                      }`}
                     onClick={() => setActiveFilter("Business Law")}
                   >
                     Business Law
                   </button>
                   <button
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      activeFilter === "Litigation"
-                        ? "bg-[#1e2b3e] text-white"
-                        : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
-                    }`}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${activeFilter === "Litigation"
+                      ? "bg-[#1e2b3e] text-white"
+                      : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
+                      }`}
                     onClick={() => setActiveFilter("Litigation")}
                   >
                     Litigation
                   </button>
                   <button
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      activeFilter === "Immigration"
-                        ? "bg-[#1e2b3e] text-white"
-                        : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
-                    }`}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${activeFilter === "Immigration"
+                      ? "bg-[#1e2b3e] text-white"
+                      : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
+                      }`}
                     onClick={() => setActiveFilter("Immigration")}
                   >
                     Immigration
                   </button>
                   <button
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      activeFilter === "Real Estate"
-                        ? "bg-[#1e2b3e] text-white"
-                        : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
-                    }`}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${activeFilter === "Real Estate"
+                      ? "bg-[#1e2b3e] text-white"
+                      : "bg-gray-200 text-[#1e2b3e] hover:bg-gray-300"
+                      }`}
                     onClick={() => setActiveFilter("Real Estate")}
                   >
                     Real Estate
                   </button>
                 </div>
               </div>
-              
+
               {/* Articles Grid */}
               {filteredArticles.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -299,8 +293,8 @@ export default function BlogPage() {
               ) : (
                 <div className="text-center py-10 bg-white rounded-lg border border-gray-200">
                   <p className="text-lg text-[#1e2b3e]/70">No articles found matching your criteria.</p>
-                  <button 
-                    onClick={() => {setActiveFilter("all"); setSearchQuery("");}}
+                  <button
+                    onClick={() => { setActiveFilter("all"); setSearchQuery(""); }}
                     className="mt-4 px-4 py-2 bg-[#ba9669] text-white rounded-md hover:bg-[#ba9669]/90 transition-colors"
                   >
                     Clear Filters
