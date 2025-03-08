@@ -149,7 +149,7 @@ export default function BlogPreviewSection() {
               Legal Resources & Updates
             </h2>
           </div>
-          <Link href="/blog" className="inline-flex items-center text-[#ba9669] hover:text-[#ba9669]/80 font-medium transition-colors group">
+          <Link href="/blogs" className="inline-flex items-center text-[#ba9669] hover:text-[#ba9669]/80 font-medium transition-colors group">
             View All Articles <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -199,8 +199,8 @@ export default function BlogPreviewSection() {
                   {article.title}
                 </h3>
                 <p className="text-[#1e2b3e]/70 mb-5 text-sm">{article.excerpt}</p>
-                <Link
-                  href={`/blog/${article.slug}`}
+                <Link 
+                  href={`/blogs/${article.slug}`} 
                   className="text-[#ba9669] font-medium inline-flex items-center hover:underline group-hover:translate-x-0.5 transition-transform"
                 >
                   Read More <ChevronRight className="ml-1 h-4 w-4" />

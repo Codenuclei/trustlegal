@@ -21,7 +21,9 @@ export default function Home() {
         <WhyChooseUsSection />
         <hr className="bg-[#ba9669] py-1"/>
         <TestimonialsSection />
+        <hr className="bg-[#ba9669] py-1"/>
         <BlogPreviewSection />
+        <hr className="bg-[#ba9669] py-1"/>
         <section id="contact" className="bg-[#1e2b3e] py-16 md:py-24 text-white">
           <div className="container mx-auto max-w-7xl px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-2">
