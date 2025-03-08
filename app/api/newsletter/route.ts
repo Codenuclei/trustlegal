@@ -24,7 +24,7 @@ export async function POST(request: Request) {
                 email,
                 user: {
                     connect: {
-                        id: '1' // Replace with actual user ID or use another approach
+                        id: 'cm7zlj90b0000uqyg6ggelsbr' // Replace with actual user ID or use another approach
                     }
                 }
             },
