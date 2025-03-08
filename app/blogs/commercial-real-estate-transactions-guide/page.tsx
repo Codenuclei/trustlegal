@@ -3,7 +3,8 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, User, CheckCircle, AlertCircle } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Phototeri from "@/public/team.jpg"
+import RealEstate from "@/public/Real-Estate.jpg";
+import OmungGupta from "@/public/OmungGupta.jpeg";
 
 export default function CommercialRealEstateTransactionsGuide() {
   return (
@@ -47,7 +48,7 @@ export default function CommercialRealEstateTransactionsGuide() {
         {/* Featured Image */}
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src={Phototeri}
+            src={RealEstate}
             alt="Commercial Real Estate Transactions"
             fill
             className="object-cover"
@@ -357,7 +358,7 @@ export default function CommercialRealEstateTransactionsGuide() {
             <div className="flex items-center gap-4 mt-8 p-6 border rounded-lg bg-[#f9f9f9]">
               <div className="relative h-16 w-16 rounded-full overflow-hidden">
                 <Image 
-                  src="/images/team/omung-gupta.jpg" 
+                  src= {OmungGupta} 
                   alt="Omung Gupta" 
                   fill 
                   className="object-cover"
@@ -400,44 +401,44 @@ export default function CommercialRealEstateTransactionsGuide() {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-[#1e2b3e] mb-6">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-6">
-                <Link href="/blogs/commercial-lease-negotiation-strategies" className="group">
+                <Link href="/blogs/business-incorporation-ontario" className="group">
                   <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <div className="relative h-48">
                       <Image 
-                        src={Phototeri}
-                        alt="Commercial Lease Negotiation" 
+                        src="/business.jpg"
+                        alt="Business Incorporation" 
                         fill 
                         className="object-cover"
                       />
                     </div>
                     <div className="p-6">
-                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Real Estate</div>
-                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Key Strategies for Negotiating Commercial Leases</h3>
-                      <p className="text-sm text-gray-600 mt-2">Learn how to secure favorable terms in your commercial lease agreements while protecting your business interests.</p>
+                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Business Law</div>
+                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Key Considerations for Business Incorporation in Ontario</h3>
+                      <p className="text-sm text-gray-600 mt-2">Learn about the essential legal considerations when incorporating your business in Ontario.</p>
                       <div className="flex items-center mt-4 text-xs text-gray-500">
                         <Calendar className="h-3 w-3 mr-1" />
-                        <span>February 12, 2025</span>
+                        <span>March 1, 2025</span>
                       </div>
                     </div>
                   </div>
                 </Link>
-                <Link href="/blogs/real-estate-due-diligence-checklist" className="group">
+                <Link href="/blogs/canadian-immigration-policy-updates" className="group">
                   <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <div className="relative h-48">
                       <Image 
-                        src={Phototeri}
-                        alt="Due Diligence Checklist" 
+                        src="/Canadian-Immigration.jpg"
+                        alt="Canadian Immigration Policies" 
                         fill 
                         className="object-cover"
                       />
                     </div>
                     <div className="p-6">
-                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Real Estate</div>
-                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">The Ultimate Real Estate Due Diligence Checklist</h3>
-                      <p className="text-sm text-gray-600 mt-2">A comprehensive guide to conducting thorough due diligence for any commercial real estate investment.</p>
+                      <div className="inline-block rounded-lg bg-[#ba9669]/10 px-3 py-1 text-xs text-[#ba9669] mb-2">Immigration</div>
+                      <h3 className="font-bold text-[#1e2b3e] group-hover:text-[#ba9669] transition-colors">Recent Changes to Canadian Immigration Policies</h3>
+                      <p className="text-sm text-gray-600 mt-2">Stay informed about the latest updates to immigration policies that may affect your status.</p>
                       <div className="flex items-center mt-4 text-xs text-gray-500">
                         <Calendar className="h-3 w-3 mr-1" />
-                        <span>January 30, 2025</span>
+                        <span>February 20, 2025</span>
                       </div>
                     </div>
                   </div>
