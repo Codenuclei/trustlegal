@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ChevronRight, Calendar, Search } from "lucide-react";
@@ -103,7 +103,7 @@ export default function BlogPage() {
   }, [activeFilter, searchQuery]);
   
 
-  const filterArticles = () => {
+  const filterArticles = useCallback(() => {
     let results = [...articles];
     
     // Apply category filter
@@ -121,7 +121,7 @@ export default function BlogPage() {
     }
     
     setFilteredArticles(results);
-  };
+  }, [activeFilter, searchQuery, articles]);
 
   const featuredArticles = articles.filter(article => article.featured);
 

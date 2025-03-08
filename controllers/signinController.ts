@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { compare } from "bcrypt";
 import prisma from "@/lib/db";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { z } from "zod";
@@ -51,8 +50,7 @@ export const Signin = async ( body: string) => {
           }
           return NextResponse.json({ message: "Server Error" }, { status: 500 });
         }
-        const passwordMatch = await compare(Password, response.password);
-        if (passwordMatch) {
+        if (response.password === Password) {
           return NextResponse.json(
             { response },
             { status: 200 }

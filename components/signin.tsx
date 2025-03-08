@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
-import z from "zod";
 import { signIn } from "next-auth/react";
 import { Eye, EyeOff } from "lucide-react";
-import { UserLogin } from "@/types/UserLogin";
 import Link from "next/link";
 
 export default function SignIn() {
@@ -15,39 +13,28 @@ export default function SignIn() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors([]);
+    
     try {
-      // Validate with Zod locally first
-      UserLogin.parse({ email, password });
-      setErrors([]);
-
       const response = await fetch("/api/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        // Fix the key name to match what the API expects
         body: JSON.stringify({ email, Password: password }),
       });
       
       const data = await response.json();
       
       if (response.status !== 200) {
-        if (typeof data.message === "string") {
-          setErrors(data.message);
-        } else if (Array.isArray(data)) {
-          setErrors(data.map((error) => error.message));
-        } else if (data.issues) {
-          setErrors(data.issues.map((issue: { message: string; }) => issue.message));
-        }
+        setErrors(typeof data.message === "string" ? data.message : "Sign in failed");
       } else {
         setErrors([]);
         setSuccessMessage("Sign in successful!");
         await signIn('credentials', { email, password, callbackUrl: '/' });
       }
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        setErrors(error.errors.map((error) => error.message));
-      }
+    } catch (err) {
+      setErrors("An error occurred. Please try again.");
     }
   };
 
@@ -140,7 +127,7 @@ export default function SignIn() {
         </form>
 
         <div className="mt-6 text-center">
-          <div className="relative my-4"></div>
+          <div className="relative my-4">
             <hr className="border-gray-200" />
           </div>
           <div className="mt-5 text-gray-600">
@@ -150,7 +137,7 @@ export default function SignIn() {
             </Link>
           </div>
         </div>
-          </div>
-        
+      </div>
+    </div>
   );
 }
