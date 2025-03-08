@@ -3,8 +3,10 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function SignIn() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<string[] | string>([]);
@@ -31,7 +33,7 @@ export default function SignIn() {
       } else {
         setErrors([]);
         setSuccessMessage("Sign in successful!");
-        await signIn('credentials', { email, password, callbackUrl: '/' });
+        router.push("/");
       }
     } catch (err) {
       setErrors("An error occurred. Please try again.");
