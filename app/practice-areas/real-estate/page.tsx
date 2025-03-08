@@ -387,7 +387,7 @@ export default function RealEstatePage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Discuss Your Real Estate Needs?</h2>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Contact TRUST LEGAL today to schedule a consultation with our real estate law team. Whether you&apos;re buying, selling, leasing, or developing property, we'll help you navigate the process with confidence.
+              Contact TRUST LEGAL today to schedule a consultation with our real estate law team. Whether you&apos;re buying, selling, leasing, or developing property, we&apos;ll help you navigate the process with confidence.
             </p>
             <Link 
               href="/contact" 

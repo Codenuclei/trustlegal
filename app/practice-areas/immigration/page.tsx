@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Check, ChevronRight, FileText, Users, Globe, Shield, Clock, Lightbulb, MapPin } from "lucide-react";
+import { Check, ChevronRight, FileText, Users, Globe, Shield, Lightbulb, MapPin } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
